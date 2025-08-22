@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>AI Item Detection</title>
+	<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+	<header>
+		<h1>AI Item Detection</h1>
+	</header>
+
+	<main>
+		<section class="instructions">
+			<ol>
+				<li>Click the <strong>Start Detection</strong> button to activate your camera.</li>
+				<li>Point your camera at an object you want to detect.</li>
+				<li>Watch the app as it identifies the object and draws a box around it.</li>
+				<li>Click <strong>Stop Detection</strong> when you are finished.</li>
+			</ol>
+		</section>
+
+		<section class="controls">
+			<button id="startBtn" class="primary">Start Detection</button>
+			<button id="stopBtn" class="secondary" disabled>Stop Detection</button>
+			<span id="status" role="status" aria-live="polite">Model not loaded</span>
+		</section>
+
+		<section class="viewport">
+			<div class="video-stage">
+				<video id="video" autoplay playsinline muted></video>
+				<canvas id="overlay"></canvas>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<p>
+			Powered by <a href="https://www.tensorflow.org/js" target="_blank" rel="noreferrer">TensorFlow.js</a>
+			and COCO-SSD
+		</p>
+	</footer>
+
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.20.0/dist/tf.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@2.2.3"></script>
+	<script src="./app.js"></script>
+</body>
+</html>
